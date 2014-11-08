@@ -1,0 +1,4 @@
+{
+	name: 'jollen',
+	email: 'jollen@jollen.org'
+}
