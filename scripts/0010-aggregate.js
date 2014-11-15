@@ -9,7 +9,8 @@
 
     db.vipData.aggregate([
     	{$match: {Age: {$gt: 30}}},
-    	{$match: {Age: {$lt: 40}}}
+    	{$match: {Age: {$lt: 40}}},
+    	{$sort: {Age: 1}}
     ]).forEach(function(user) {
     	print("User: " + user.Nmae + ". Age: " + user.Age);
     });
