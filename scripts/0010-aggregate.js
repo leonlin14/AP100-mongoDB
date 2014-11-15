@@ -6,6 +6,9 @@
 
 {
     var db = connect('localhost/test');
+	var start,
+    	end;
+    start = new Date().getTime();
 
     db.vipData.aggregate([
     	{$match: {Age: {$gt: 30}}},
@@ -15,5 +18,9 @@
     	print("User: " + user.Nmae + ". Age: " + user.Age);
     });
 
+    end = new Date().getTime();
+    
     print("Info: 0010-aggregate finished.");
+ 	print("Escape Time: " + (end - start) + "(ms).");
+       
 }
