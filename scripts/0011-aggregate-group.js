@@ -12,11 +12,13 @@
 
     db.vipData.aggregate([
     	{$group: {
-    		_id: null,
-    		count: {$sum: 1}
+    		_id: "$Age",
+    		count: {$sum: 1},
+    		names: {$addToSet: "$Name"}
     	}},
+    	{$sort: {_id: 1}}
     ]).forEach(function(user) {
-    	print("Users: " + user.count);
+    	print("Users: " + user.count + ", Age: " + user._id );
     });
 
     end = new Date().getTime();

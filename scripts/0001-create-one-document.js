@@ -7010,7 +7010,7 @@
     }
   ];
 
-    db.user.save(users);
+    db.users.save(users);
 
     print('0001-create-one-document finished.')
 }
